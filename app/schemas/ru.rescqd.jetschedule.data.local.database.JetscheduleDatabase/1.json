@@ -1,0 +1,246 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "e042f0b63f0d800f98aa3c70ed52c45b",
+    "entities": [
+      {
+        "tableName": "group_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`group_id` INTEGER PRIMARY KEY AUTOINCREMENT, `group_value` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "groupUid",
+            "columnName": "group_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "groupName",
+            "columnName": "group_value",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "group_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_group_table_group_value",
+            "unique": true,
+            "columnNames": [
+              "group_value"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_group_table_group_value` ON `${TABLE_NAME}` (`group_value`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "SUBJECT_TABLE",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`subject_uid` INTEGER PRIMARY KEY AUTOINCREMENT, `SUBJECT_VALUE` TEXT NOT NULL, `SUBJECT_DISPLAY_VALUE` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "subjectUid",
+            "columnName": "subject_uid",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "subjectValue",
+            "columnName": "SUBJECT_VALUE",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "subjectCustomValue",
+            "columnName": "SUBJECT_DISPLAY_VALUE",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "subject_uid"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_SUBJECT_TABLE_SUBJECT_VALUE",
+            "unique": true,
+            "columnNames": [
+              "SUBJECT_VALUE"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_SUBJECT_TABLE_SUBJECT_VALUE` ON `${TABLE_NAME}` (`SUBJECT_VALUE`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "schedule_info_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`schedule_info_uid` INTEGER PRIMARY KEY AUTOINCREMENT, `date` INTEGER NOT NULL, `subject_uid` INTEGER NOT NULL, `teacher_uid` INTEGER NOT NULL, `audience_uid` INTEGER NOT NULL, `group_id` INTEGER NOT NULL, `PAIR_ORDER_VALUE` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "scheduleInfoUid",
+            "columnName": "schedule_info_uid",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "date",
+            "columnName": "date",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "subjectUid",
+            "columnName": "subject_uid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "teacherUid",
+            "columnName": "teacher_uid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "audienceUid",
+            "columnName": "audience_uid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "groupUid",
+            "columnName": "group_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pairOrderValue",
+            "columnName": "PAIR_ORDER_VALUE",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "schedule_info_uid"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "AUDIENCE_TABLE",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`audience_uid` INTEGER PRIMARY KEY AUTOINCREMENT, `AUDIENCE_VALUE` TEXT NOT NULL, `CORPUS_VALUE` INTEGER NOT NULL, `FLOOR_VALUE` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "audienceUid",
+            "columnName": "audience_uid",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "audienceValue",
+            "columnName": "AUDIENCE_VALUE",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "corpusValue",
+            "columnName": "CORPUS_VALUE",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "floorValue",
+            "columnName": "FLOOR_VALUE",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "audience_uid"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_AUDIENCE_TABLE_AUDIENCE_VALUE",
+            "unique": true,
+            "columnNames": [
+              "AUDIENCE_VALUE"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_AUDIENCE_TABLE_AUDIENCE_VALUE` ON `${TABLE_NAME}` (`AUDIENCE_VALUE`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "TEACHER_TABLE",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`teacher_uid` INTEGER PRIMARY KEY AUTOINCREMENT, `TEACHER_DEFAULT_VALUE` TEXT NOT NULL, `TEACHER_PATRONYMIC_VALUE` TEXT NOT NULL, `TEACHER_NAME_VALUE` TEXT NOT NULL, `TEACHER_FAMILY_VALUE` TEXT NOT NULL, `TEACHER_DISPLAY_VALUE` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "teacherUid",
+            "columnName": "teacher_uid",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "teacherDefaultValue",
+            "columnName": "TEACHER_DEFAULT_VALUE",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "teacherPatronymicValue",
+            "columnName": "TEACHER_PATRONYMIC_VALUE",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "teacherNameValue",
+            "columnName": "TEACHER_NAME_VALUE",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "teacherFamilyValue",
+            "columnName": "TEACHER_FAMILY_VALUE",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "teacherDisplayValue",
+            "columnName": "TEACHER_DISPLAY_VALUE",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "teacher_uid"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'e042f0b63f0d800f98aa3c70ed52c45b')"
+    ]
+  }
+}

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+<string name="app_name">JetSchedule</string>
+
+<!-- Home Tabs Bottom Title -->
+
+<string name="home_selection_schedule">schedule</string>
+<string name="home_selection_manager">manager</string>
+<string name="home_selection_settings">settings</string>
+
+
+<!-- Home Tabs Top Bar-->
+
+<string name="top_bar_schedule">Schedule</string>
+<string name="top_bar_manager">Manager</string>
+<string name="top_bar_settings">Settings</string>
+
+
+<!-- Left Navigation On Schedule Screen -->
+
+<string name="schedule_left_navigation_drawer_title">Navigation Items</string>
+<string name="schedule_left_navigation_drawer_add">Add item</string>
+
+<!-- Settings Screen-->
+
+<string name="settings_screen_open_manual">Open manual</string>
+
+<string name="settings_screen_appearance">Appearance</string>
+<string name="settings_screen_behavior">Behavior</string>
+<string name="settings_screen_about">About application</string>
+
+
+<!-- Manager Screen-->
+
+<string name="schedule_manager_default_error_message">internal error</string>
+<string name="network_unavailable">network unavailable</string>
+
+<!-- Add Drawer Screen-->
+
+<string name="add_drawer_select_type">type</string>
+
+<string name="add_drawer_select_teacher_not_selected">teacher not selected</string>
+<string name="add_drawer_select_group_not_selected">group not selected</string>
+
+<string name="add_drawer_select_teacher">select teacher</string>
+<string name="add_drawer_select_teacher_autocomplete_label">teacher…</string>
+<string name="add_drawer_select_group">select group</string>
+<string name="add_drawer_select_group_autocomplete_label">group…</string>
+
+<string name="add_drawer_select_group_no_items">groups not found</string>
+<string name="add_drawer_select_teacher_no_items">teachers not found</string>
+
+<string name="drawer_type_teacher">Teacher</string>
+<string name="drawer_type_group">Group</string>
+
+
+<string name="error_change_drawer_item">error change item</string>
+<string name="error_delete_drawer_item">error delete item</string>
+<string name="schedule_left_navigation_drawer_custom_select_title">Custom Select</string>
+
+<!-- Manual Screen-->
+
+<string name="manual_screen_title">Manual</string>
+<string name="manual_screen_text">manual screen text</string>
+<string name="manual_screen_exit">exit</string>
+
+
+<!-- Custom Select Screen-->
+
+<string name="top_bar_custom_select">Custom Select</string>
+<string name="custom_select_date_picker_title">select date</string>
+
+<!-- Custom Select Filter Info -->
+
+<string name="custom_select_dropdown_menu_corpus">corpus</string>
+<string name="custom_select_dropdown_menu_pair_order">pair order</string>
+<string name="custom_select_outline_button_date">date</string>
+
+<!-- Custom Select Filters -->
+
+<string name="custom_select_filter_busy_audience_by_date">busy audience by date</string>
+<string name="custom_select_filter_available_audience_by_date_and_pair_order">available audience by date and pair order</string>
+<string name="custom_select_filter_available_audience_by_date">available audience by date</string>
+<string name="custom_select_filter_all_audience">all audience</string>
+
+
+<!-- Schedule Shared Screen -->
+
+<string name="top_bar_schedule_teacher">Teacher</string>
+<string name="top_bar_schedule_group">Group</string>
+
+<!-- Schedule Bottom Sheet -->
+
+<string name="schedule_group_bottom_sheet_title">bottom sheet title</string>
+<string name="bottom_sheet_date">bottom sheet date</string>
+<string name="bottom_sheet_title">sheet title</string>
+<string name="bottom_sheet_pair_order">pair order</string>
+<string name="bottom_sheet_subject">subject</string>
+<string name="bottom_sheet_teacher_fio">teacher FIO</string>
+<string name="bottom_sheet_audience">audience</string>
+<string name="bottom_sheet_next_days">next days</string>
+<string name="bottom_sheet_prev_days">prev days</string>
+
+
+<!-- Appearance Screen -->
+
+<string name="top_bar_appearance">Appearance</string>
+
+<!-- Appearance Screen Items -->
+
+<string name="appearance_screen_app_theme">Theme</string>
+<string name="appearance_screen_typography">Typography</string>
+<string name="appearance_screen_color_scheme">Color scheme</string>
+<string name="appearance_screen_audience_color_scheme">Audience color scheme</string>
+
+<!-- Appearance Screen Items Value -->
+
+<string name="schedule_backend_prover_teacher">teacher</string>
+<string name="schedule_backend_prover_group">group</string>
+<string name="jetschedule_font_family_motserrat">motserrat</string>
+<string name="jetschedule_font_family_system_default">system</string>
+<string name="jetschedule_color_scheme_dynamic">dynamic</string>
+<string name="jetschedule_color_scheme_variant_1">variant 1</string>
+<string name="jetschedule_color_scheme_variant_2">variant 2</string>
+<string name="jetschedule_audience_color_scheme_dynamic">dynamic</string>
+<string name="jetschedule_audience_color_scheme_variant_2">variant 2</string>
+<string name="jetschedule_audience_color_scheme_android">android</string>
+<string name="jetschedule_color_android_theme">android</string>
+<string name="jetschedule_audience_color_scheme_variant_1">variant 1</string>
+<string name="app_theme_system">follow system</string>
+<string name="app_theme_light">light</string>
+<string name="app_theme_night">night</string>
+
+
+<!-- Settings Behavior Screen-->
+
+<string name="top_bar_behavior">Behavior</string>
+<string name="behavior_start_dest_title">Start destination</string>
+<string name="appearance_screen_backend_provider">schedule provider</string>
+<string name="behavior_periodic_work_title">Auto-download schedule</string>
+<string name="behavior_periodic_work_repeat_interval">Repeat Interval</string>
+<string name="behavior_periodic_work_flex_interval">Flex interval</string>
+<string name="behavior_periodic_work_date_threshold">threshold</string>
+<string name="behavior_periodic_work_date_offset">start date offset</string>
+
+
+<!-- About application -->
+
+<string name="top_bar_about_application">About application</string>
+<string name="about_application_some_text">this is application :)</string>
+
+<!-- Snacks -->
+
+<string name="snack_invalid_date_offset">invalid date offset</string>
+<string name="snack_invalid_date_threshold">invalid date threshold</string>
+<string name="snack_save_settings">settings saved</string>
+
+<!-- Other -->
+
+<string name="empty_string" />
+<string name="error_base_title">unexpected error</string>
+
+<string name="hours">hours</string>
+<string name="minutes">minutes</string>
+
+
+<!-- Buttons -->
+
+<string name="button_action_cancel" tools:ignore="ButtonCase">cancel</string>
+<string name="button_action_confirm">confirm</string>
+
+
+</resources>

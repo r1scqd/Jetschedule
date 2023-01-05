@@ -1,0 +1,172 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">JetSchedule</string>
+
+    <!-- Home Tabs Bottom Title -->
+
+    <string name="home_selection_schedule">Расписание</string>
+    <string name="home_selection_manager">менеджер</string>
+    <string name="home_selection_settings">Настройки</string>
+
+
+    <!-- Home Tabs Top Bar-->
+
+    <string name="top_bar_schedule">Расписание</string>
+    <string name="top_bar_manager">Управление расписанием</string>
+    <string name="top_bar_settings">Настройки</string>
+
+
+    <!-- Left Navigation On Schedule Screen -->
+
+    <string name="schedule_left_navigation_drawer_title">Доступные выборки</string>
+    <string name="schedule_left_navigation_drawer_add">Добавить…</string>
+
+    <!-- Settings Screen-->
+
+    <string name="settings_screen_open_manual">Открыть руководство</string>
+
+    <string name="settings_screen_appearance">Внешний вид</string>
+    <string name="settings_screen_behavior">Поведение</string>
+    <string name="settings_screen_about">О приложении</string>
+
+
+    <!-- Manager Screen-->
+
+    <string name="schedule_manager_default_error_message">Внутренняя ошибка</string>
+    <string name="network_unavailable">Сеть недоступна</string>
+
+    <!-- Add Drawer Screen-->
+
+    <string name="add_drawer_select_type">Выберите Группу или Преподавателя</string>
+
+    <string name="add_drawer_select_teacher_not_selected">Преподаватель не выбран</string>
+    <string name="add_drawer_select_group_not_selected">Группа не выбрана</string>
+
+    <string name="add_drawer_select_teacher">Выберите преподавателя</string>
+    <string name="add_drawer_select_teacher_autocomplete_label">Преподаватель…</string>
+    <string name="add_drawer_select_group">Выберите группу</string>
+    <string name="add_drawer_select_group_autocomplete_label">Группа…</string>
+
+    <string name="add_drawer_select_group_no_items">Группы не найдены. Скачайте расписание на любой день, чтобы загрузить список групп</string>
+    <string name="add_drawer_select_teacher_no_items">Преподаватели не найдены. Скачайте расписание на любой день, чтобы загрузить список преподавателей</string>
+
+    <string name="drawer_type_teacher">Преподаватель</string>
+    <string name="drawer_type_group">Группа</string>
+
+
+    <string name="error_change_drawer_item">Не удалось сменить предмет</string>
+    <string name="error_delete_drawer_item">Не удалось удалить предмет</string>
+    <string name="schedule_left_navigation_drawer_custom_select_title">Кастомная выборка</string>
+
+    <!-- Manual Screen-->
+
+    <string name="manual_screen_title">Руководство</string>
+    <string name="manual_screen_text">Текст руководства</string>
+    <string name="manual_screen_exit">Выйти</string>
+
+
+    <!-- Custom Select Screen-->
+
+    <string name="top_bar_custom_select">Выборка</string>
+
+    <!-- Custom Select Filter Info -->
+
+    <string name="custom_select_dropdown_menu_corpus">Корпус</string>
+    <string name="custom_select_dropdown_menu_pair_order">Номер пары</string>
+    <string name="custom_select_outline_button_date">Дата</string>
+    <string name="custom_select_date_picker_title">Выберите доступную дату</string>
+
+    <!-- Custom Select Filters -->
+
+    <string name="custom_select_filter_busy_audience_by_date">Занятые аудитории по дате</string>
+    <string name="custom_select_filter_available_audience_by_date_and_pair_order">Доступные аудтории по дате и номеру пары</string>
+    <string name="custom_select_filter_available_audience_by_date">Доступные аудитории по дате</string>
+    <string name="custom_select_filter_all_audience">Все аудитории</string>
+
+
+    <!-- Schedule Shared Screen -->
+
+    <string name="top_bar_schedule_teacher">Расписание</string>
+    <string name="top_bar_schedule_group">Расписание</string>
+
+    <!-- Schedule Bottom Sheet -->
+
+    <string name="schedule_group_bottom_sheet_title">Дополнительная информация</string>
+    <string name="bottom_sheet_title">Дополнительная информация</string>
+    <string name="bottom_sheet_date">Дата</string>
+    <string name="bottom_sheet_pair_order">Номер Пары</string>
+    <string name="bottom_sheet_subject">Предмет</string>
+    <string name="bottom_sheet_teacher_fio">ФИО преподавателя</string>
+    <string name="bottom_sheet_audience">Аудитория</string>
+    <string name="bottom_sheet_next_days">Следующие дни</string>
+    <string name="bottom_sheet_prev_days">Предыдущие дни</string>
+
+
+    <!-- Appearance Screen -->
+
+    <string name="top_bar_appearance">Внешний вид</string>
+
+    <!-- Appearance Screen Items -->
+
+    <string name="appearance_screen_app_theme">Тема</string>
+    <string name="appearance_screen_typography">Шрифт</string>
+    <string name="appearance_screen_color_scheme">Цветовая схема приложения</string>
+    <string name="appearance_screen_audience_color_scheme">Цветовая схема аудиторий</string>
+
+    <!-- Appearance Screen Items Value -->
+
+    <string name="schedule_backend_prover_teacher">Преподаватели</string>
+    <string name="schedule_backend_prover_group">Группы</string>
+    <string name="jetschedule_font_family_motserrat">Motserrat</string>
+    <string name="jetschedule_font_family_system_default">Системный</string>
+    <string name="jetschedule_color_scheme_dynamic">Динамическая</string>
+    <string name="jetschedule_color_scheme_variant_1">вариант 1</string>
+    <string name="jetschedule_color_scheme_variant_2">вариант 2</string>
+    <string name="jetschedule_audience_color_scheme_dynamic">Динамическая</string>
+    <string name="jetschedule_audience_color_scheme_variant_2">вариант 2</string>
+    <string name="jetschedule_audience_color_scheme_android">android</string>
+    <string name="jetschedule_color_android_theme">android</string>
+    <string name="jetschedule_audience_color_scheme_variant_1">вариант 1</string>
+    <string name="app_theme_system">Системная</string>
+    <string name="app_theme_light">Светлая</string>
+    <string name="app_theme_night">Тёмная</string>
+
+
+    <!-- Settings Behavior Screen-->
+
+    <string name="top_bar_behavior">Поведение</string>
+    <string name="behavior_start_dest_title">Начальный экран</string>
+    <string name="appearance_screen_backend_provider">Поставщик расписания</string>
+    <string name="behavior_periodic_work_title">Автозагрузка расписания</string>
+    <string name="behavior_periodic_work_repeat_interval">Время повторения</string>
+    <string name="behavior_periodic_work_flex_interval">Время работы</string>
+    <string name="behavior_periodic_work_date_threshold">трешолд</string>
+    <string name="behavior_periodic_work_date_offset">Смещение по дате</string>
+
+
+    <!-- About application -->
+
+    <string name="top_bar_about_application">О приложении</string>
+    <string name="about_application_some_text">Что-то о приложении</string>
+
+    <!-- Snacks -->
+
+    <string name="snack_invalid_date_offset">Неверно указано смещение</string>
+    <string name="snack_invalid_date_threshold">Неверно указан трешолд</string>
+    <string name="snack_save_settings">Настроки Сохранены</string>
+
+    <!-- Other -->
+
+    <string name="empty_string" />
+    <string name="error_base_title">unexpected error</string>
+
+    <string name="hours">ч.</string>
+    <string name="minutes">мин.</string>
+
+
+    <!-- Buttons -->
+
+    <string name="button_action_cancel" tools:ignore="ButtonCase">Отменить</string>
+    <string name="button_action_confirm">Подтвердить</string>
+
+
+</resources>
