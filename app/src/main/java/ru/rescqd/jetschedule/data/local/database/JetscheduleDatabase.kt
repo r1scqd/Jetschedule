@@ -5,6 +5,7 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import ru.rescqd.jetschedule.data.local.database.conventer.DateConverter
 import ru.rescqd.jetschedule.data.local.database.dao.CustomSelectDao
+import ru.rescqd.jetschedule.data.local.database.dao.RenameDao
 import ru.rescqd.jetschedule.data.local.database.dao.ScheduleDropDao
 import ru.rescqd.jetschedule.data.local.database.dao.ScheduleSaveDao
 import ru.rescqd.jetschedule.data.local.database.entity.*
@@ -19,4 +20,5 @@ abstract class JetscheduleDatabase : RoomDatabase(){
     abstract fun getScheduleSaveDao(): ScheduleSaveDao
     abstract fun getCustomSelectDao(): CustomSelectDao
     abstract fun getScheduleDropDao(): ScheduleDropDao
+    abstract fun getRenameDao(): RenameDao
 }

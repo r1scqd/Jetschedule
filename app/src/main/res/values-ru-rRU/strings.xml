@@ -25,6 +25,7 @@
     <string name="settings_screen_open_manual">Открыть руководство</string>
 
     <string name="settings_screen_appearance">Внешний вид</string>
+    <string name="settings_screen_rename_subject">Переименование предметов</string>
     <string name="settings_screen_behavior">Поведение</string>
     <string name="settings_screen_about">О приложении</string>
 
@@ -147,12 +148,21 @@
 
     <string name="top_bar_about_application">О приложении</string>
     <string name="about_application_some_text">Что-то о приложении</string>
+    <!-- Rename Subject Screen -->
+
+    <string name="top_bar_rename_subject">Переименование Предметов</string>
+    <string name="rename_subject_select_subject">Предмет…</string>
+    <string name="rename_subject_display_subject_label">Отображаемое название</string>
+    <string name="rename_subject_select_subject_error">Выберите предмет из выпадающего списка</string>
+    <string name="rename_subject_success">Отображаемое имя сохранено</string>
 
     <!-- Snacks -->
 
     <string name="snack_invalid_date_offset">Неверно указано смещение</string>
     <string name="snack_invalid_date_threshold">Неверно указан трешолд</string>
     <string name="snack_save_settings">Настроки Сохранены</string>
+    <string name="snack_success">успех</string>
+    <string name="snack_not_implemented">не реализовано</string>
 
     <!-- Other -->
 

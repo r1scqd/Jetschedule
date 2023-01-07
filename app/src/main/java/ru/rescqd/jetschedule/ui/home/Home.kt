@@ -47,6 +47,8 @@ import ru.rescqd.jetschedule.ui.screen.settings.appearance.SettingsAppearanceScr
 import ru.rescqd.jetschedule.ui.screen.settings.behavior.SettingsBehaviorScreen
 import ru.rescqd.jetschedule.ui.screen.settings.behavior.SettingsBehaviorViewModel
 import ru.rescqd.jetschedule.ui.screen.settings.destinations.SettingsDestinationScreen
+import ru.rescqd.jetschedule.ui.screen.settings.rename.subject.RenameSubjectScreen
+import ru.rescqd.jetschedule.ui.screen.settings.rename.subject.RenameSubjectViewModel
 import ru.rescqd.jetschedule.ui.theme.JetscheduleTheme
 import ru.rescqd.jetschedule.ui.theme.ThemeViewModel
 import java.util.*
@@ -108,6 +110,12 @@ fun NavGraphBuilder.addSettingsGraph(modifier: Modifier, upPress: () -> Unit) {
     ) {
         val vm = hiltViewModel<SettingsBehaviorViewModel>()
         SettingsBehaviorScreen(modifier = modifier, viewModel = vm, upPress = upPress)
+    }
+    composable(
+        route = SettingsDestinations.RENAME_SUBJECT.route
+    ) {
+        val vm = hiltViewModel<RenameSubjectViewModel>()
+        RenameSubjectScreen(modifier = modifier, viewModel = vm, upPress = upPress)
     }
 }
 
@@ -379,7 +387,7 @@ private fun JetBottomNavPreview() {
     ) {
         JetscheduleBottomBar(
             tabs = HomeSections.values(),
-            currentRoute = "home/settings",
+            currentRoute = "home/schedule",
             navigateToRoute = { }
         )
     }

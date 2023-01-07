@@ -16,9 +16,11 @@ import okhttp3.OkHttpClient
 import ru.rescqd.jetschedule.data.Contains
 import ru.rescqd.jetschedule.data.local.database.JetscheduleDatabase
 import ru.rescqd.jetschedule.data.local.database.dao.CustomSelectDao
+import ru.rescqd.jetschedule.data.local.database.dao.RenameDao
 import ru.rescqd.jetschedule.data.local.database.dao.ScheduleDropDao
 import ru.rescqd.jetschedule.data.local.database.dao.ScheduleSaveDao
 import ru.rescqd.jetschedule.data.local.repository.JetscheduleRepository
+import ru.rescqd.jetschedule.data.local.repository.SchedulePreferencesRepository
 import ru.rescqd.jetschedule.data.local.source.TeacherFioDataSource
 import ru.rescqd.jetschedule.data.local.repository.UserPreferencesRepository
 import ru.rescqd.jetschedule.data.local.source.ScheduleRemoteDataSource
@@ -64,9 +66,13 @@ object AppModule {
     fun provideDropDao(db: JetscheduleDatabase): ScheduleDropDao = db.getScheduleDropDao()
 
 
-        @Provides
+    @Provides
     @Singleton
     fun provideScheduleSaveDao(db: JetscheduleDatabase): ScheduleSaveDao = db.getScheduleSaveDao()
+
+    @Provides
+    @Singleton
+    fun provideRenameDao(db: JetscheduleDatabase): RenameDao = db.getRenameDao()
 
     @Provides
     @Singleton
@@ -86,7 +92,6 @@ object AppModule {
     ): ScheduleManageWrapper = ScheduleManageWrapper(saveDao, teacherFIODataSource, dropDao)
 
 
-
     @Provides
     @Singleton
     fun provideTeacherFioDataSource(): TeacherFioDataSource = TeacherFioDataSource()
@@ -100,6 +105,12 @@ object AppModule {
     ): JetscheduleRepository = JetscheduleRepository(
         dropDao, selectDao, scheduleRemoteDataSource
     )
+
+
+    @Provides
+    @Singleton
+    fun provideSchedulePreferenceRepository(renameDao: RenameDao): SchedulePreferencesRepository =
+        SchedulePreferencesRepository(renameDao)
 
     @Provides
     @Singleton

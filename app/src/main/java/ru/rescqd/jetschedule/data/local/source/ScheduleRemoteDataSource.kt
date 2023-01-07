@@ -13,7 +13,7 @@ import java.time.LocalDate
 @OptIn(ExperimentalSerializationApi::class)
 class ScheduleRemoteDataSource(
     private val workManager: WorkManager,
-    val userPreferencesRepository: UserPreferencesRepository
+    userPreferencesRepository: UserPreferencesRepository
 ) {
 
     fun syncOnDate(date: LocalDate): WorkContinuation {

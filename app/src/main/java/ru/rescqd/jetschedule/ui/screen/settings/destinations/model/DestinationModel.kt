@@ -12,7 +12,7 @@ enum class DestinationModel (
     val icon: ImageVector? = null
 ){
     APPEARANCE(R.string.settings_screen_appearance, SettingsDestinations.APPLICATION_APPEARANCE.route),
-    //KEK(R.string.settings_screen_group_change, SettingsDestinations.GROUP_CHANGE_ROUTE.route),
+    RENAME_SUBJECT(R.string.settings_screen_rename_subject, SettingsDestinations.RENAME_SUBJECT.route),
     BEHAVIOR(R.string.settings_screen_behavior, SettingsDestinations.BEHAVIOR.route),
     ABOUT(R.string.settings_screen_about, SettingsDestinations.ABOUT.route),
 }

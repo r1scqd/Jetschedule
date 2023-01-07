@@ -69,11 +69,9 @@ object MainDestinations {
 
 enum class SettingsDestinations(val route: String) {
     APPLICATION_APPEARANCE ( "app_appearance"),
-    //GROUP_CHANGE_ROUTE ( "group_change"),
-    //SUBJECT_NAMING_ROUTE ( "subject_naming"),
-    //TEACHER_NAMING_ROUTE ( "teacher_naming"),
     ABOUT("about"),
-    BEHAVIOR("behavior")
+    BEHAVIOR("behavior"),
+    RENAME_SUBJECT("rename_subject")
 }
 
 private fun NavGraphBuilder.jetscheduleNavGraph(
