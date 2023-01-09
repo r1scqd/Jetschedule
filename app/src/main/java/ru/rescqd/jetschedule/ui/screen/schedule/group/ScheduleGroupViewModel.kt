@@ -14,7 +14,6 @@ import ru.rescqd.jetschedule.ui.screen.schedule.group.model.ScheduleGroupEvent
 import ru.rescqd.jetschedule.ui.screen.schedule.group.model.ScheduleGroupViewState
 import ru.rescqd.jetschedule.ui.screen.schedule.shared.model.PairCardModel
 import java.time.LocalDate
-import java.time.Month
 import javax.inject.Inject
 
 @HiltViewModel
@@ -62,7 +61,7 @@ class ScheduleGroupViewModel @Inject constructor(
     private fun pairClickProcess(pairId: Long, state: ScheduleGroupViewState.Display) {
         viewModelScope.launch {
             val info = jetscheduleRepository.getPairMoreInfo(pairId)
-            _state.emit(state.copy(pairMoreInfoModelFlow = PairMoreInfoModelGroup(id = info.scheduleUid,
+            _state.emit(state.copy(pairMoreInfoModel = PairMoreInfoModelGroup(id = info.scheduleUid,
                 subject = info.subjectDefault,
                 pairOrder = info.pairOrder,
                 teacher = "${info.teacherName} ${info.teacherPatronymic}",
@@ -87,7 +86,7 @@ class ScheduleGroupViewModel @Inject constructor(
             prevDate = if (savePrevDate) currentState.date else null))
     }
 
-    private fun getInitialDate(): LocalDate = LocalDate.of(2023, Month.JANUARY, 10)
+    private fun getInitialDate(): LocalDate = LocalDate.now()
 
 
     private fun initialFetch(groupName: String) {

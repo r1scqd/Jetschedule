@@ -10,7 +10,7 @@ sealed class ScheduleGroupViewState{
         val date: LocalDate,
         val groupName: String,
         val pairCardModelsFlow: Flow<List<PairCardModel>>,
-        val pairMoreInfoModelFlow: PairMoreInfoModelGroup? = null,
+        val pairMoreInfoModel: PairMoreInfoModelGroup? = null,
         val synchronizedDates: Flow<List<LocalDate>>,
         val prevDate: LocalDate? = null
     ): ScheduleGroupViewState()
