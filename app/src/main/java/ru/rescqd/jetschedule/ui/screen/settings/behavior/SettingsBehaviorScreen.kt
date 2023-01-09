@@ -2,10 +2,6 @@ package ru.rescqd.jetschedule.ui.screen.settings.behavior
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Restore
-import androidx.compose.material.icons.outlined.SelfImprovement
-import androidx.compose.material.icons.outlined.Work
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -17,16 +13,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import ru.rescqd.jetschedule.R
-import ru.rescqd.jetschedule.ui.theme.ScheduleBackendProvider
-import ru.rescqd.jetschedule.ui.components.JetscheduleScaffold
-import ru.rescqd.jetschedule.ui.components.JetscheduleSettingSwitch
-import ru.rescqd.jetschedule.ui.components.JetscheduleTopBar
-import ru.rescqd.jetschedule.ui.components.NiaDropdownMenuButton
+import ru.rescqd.jetschedule.ui.components.*
 import ru.rescqd.jetschedule.ui.home.HomeSections
-import ru.rescqd.jetschedule.ui.screen.settings.appearance.view.CustomDropdownMenu
-import ru.rescqd.jetschedule.ui.screen.settings.appearance.view.CustomSwitch
 import ru.rescqd.jetschedule.ui.screen.settings.behavior.model.SettingsBehaviorViewState
 import ru.rescqd.jetschedule.ui.screen.settings.behavior.model.SettingsContainer
+import ru.rescqd.jetschedule.ui.theme.ScheduleBackendProvider
 import ru.rescqd.jetschedule.ui.view.ViewLoading
 import ru.rescqd.jetscheduleo.ui.components.NiaOutlinedButton
 import java.time.Duration
@@ -59,18 +50,20 @@ fun SettingsBehaviorScreen(
         JetscheduleTopBar(
             modifier = modifier, title = R.string.top_bar_behavior, upPress = upPress
         )
-    }, content = {
+    }) { paddingValues ->
         Box(
-            modifier = modifier.padding(it)
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(paddingValues)
         ) {
             when (val currentState = state.value) {
                 is SettingsBehaviorViewState.Display -> ViewDisplay(
-                    modifier, currentState, viewModel
+                    Modifier, currentState, viewModel
                 )
                 is SettingsBehaviorViewState.Loading -> ViewLoading(modifier)
             }
         }
-    })
+    }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -102,7 +95,7 @@ private fun ViewDisplay(
     var startDestination by remember {
         mutableStateOf(state.startDestination)
     }
-    JetscheduleScaffold(modifier = modifier, bottomBar = {
+    JetscheduleScaffold(modifier = Modifier.fillMaxSize(), bottomBar = {
         NiaOutlinedButton(
             modifier = modifier.fillMaxWidth(),
             onClick = {
@@ -120,43 +113,37 @@ private fun ViewDisplay(
             },
             text = { Text(text = stringResource(id = R.string.button_action_confirm)) },
         )
-    }) { innerPadding ->
-        Column(modifier = modifier.padding(innerPadding)) {
-           //JetscheduleSettingMenu(
-            //                modifier = modifier,
-            //                items = HomeSections.values().toList(),
-            //                title = stringResource(scheduleUid = R.string.behavior_start_dest_title),
-            //                itemText = { Text(text = stringResource(scheduleUid = it.title), style = MaterialTheme.typography.labelMedium) },
-            //                selectedItem = startDestination,
-            //                onItemClick = { startDestination = it },
-            //            )
-            CustomDropdownMenu(
+    }) {
+        Column(
+            modifier = modifier
+                .fillMaxSize()
+                .padding()
+        ) {
+            JetscheduleSettingMenu(
                 modifier = modifier,
-                icon = Icons.Outlined.Restore,
-                title = R.string.behavior_start_dest_title,
+                title = stringResource(id = R.string.behavior_start_dest_title),
                 items = HomeSections.values().toList(),
                 onItemClick = { startDestination = it },
-                text = { Text(text = stringResource(id = startDestination.title)) }
-            ) { Text(text = stringResource(id = it.title)) }
-            CustomDropdownMenu(
+                text = { Text(text = stringResource(id = it.title)) },
+                selectedItem = startDestination
+            )
+            JetscheduleSettingMenu(
                 modifier = modifier,
-                icon = Icons.Outlined.SelfImprovement,
-                title = R.string.appearance_screen_backend_provider,
+                title = stringResource(id = R.string.appearance_screen_backend_provider),
                 items = ScheduleBackendProvider.values().toList(),
                 onItemClick = { backendProvider = it },
-                text = { Text(text = stringResource(id = backendProvider.displayName)) }
-            ) { Text(text = stringResource(id = it.displayName)) }
-            JetscheduleSettingSwitch(checked = isWorkManagerEnable,
-                onCheckedChange = {isWorkManagerEnable = it},
+                text = { Text(text = stringResource(id = it.displayName)) },
+                selectedItem = backendProvider
+            )
+            JetscheduleSettingSwitch(
+                checked = isWorkManagerEnable,
+                onCheckedChange = { isWorkManagerEnable = it },
                 title = stringResource(id = R.string.behavior_periodic_work_title),
             )
-            CustomSwitch(modifier = modifier,
-                icon = Icons.Outlined.Work,
-                title = R.string.behavior_periodic_work_title,
-                checked = isWorkManagerEnable,
-                onClick = { isWorkManagerEnable = it })
             Row(
-                modifier = modifier.fillMaxWidth(),
+                modifier = modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 15.dp, vertical = 10.dp),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
@@ -181,7 +168,9 @@ private fun ViewDisplay(
                 )
             }
             Row(
-                modifier = modifier.fillMaxWidth(),
+                modifier = modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 15.dp, vertical = 10.dp),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
@@ -206,7 +195,9 @@ private fun ViewDisplay(
                 )
             }
             Row(
-                modifier = modifier.fillMaxWidth(),
+                modifier = modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 15.dp, vertical = 10.dp),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
@@ -222,7 +213,9 @@ private fun ViewDisplay(
                 )
             }
             Row(
-                modifier = modifier.fillMaxWidth(),
+                modifier = modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 15.dp, vertical = 10.dp),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {

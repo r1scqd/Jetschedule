@@ -28,7 +28,12 @@
     <string name="settings_screen_appearance">Appearance</string>
     <string name="settings_screen_rename_subject">Rename subject</string>
     <string name="settings_screen_behavior">Behavior</string>
+    <string name="settings_screen_manual" >Manual</string>
     <string name="settings_screen_about">About application</string>
+    <string name="settings_screen_appearance_subtitle">Color scheme…</string>
+    <string name="settings_screen_rename_subject_subtitle">change display name subject</string>
+    <string name="settings_screen_behavior_subtitle">start destination etc…</string>
+    <string name="settings_screen_manual_subtitle" >Manual about this application</string>
 
 
     <!-- Manager Screen-->

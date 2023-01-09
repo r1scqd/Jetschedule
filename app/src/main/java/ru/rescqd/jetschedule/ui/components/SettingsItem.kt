@@ -18,15 +18,6 @@ import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import ru.rescqd.jetschedule.R
 import ru.rescqd.jetscheduleo.ui.components.NiaTextButton
-
-//  modifier: Modifier,
-//    icon: ImageVector? = null,
-//    @StringRes title: Int,
-//    items: List<T>,
-//    onItemClick: (item: T) -> Unit,
-//    enabled: Boolean = true,
-
-
 @Composable
 private fun JetscheduleSettingText(
     modifier: Modifier,
@@ -79,7 +70,7 @@ fun <T> JetscheduleSettingMenu(
     enabled: Boolean = true,
     title: String,
     selectedItem: T,
-    itemText: @Composable (item: T) -> Unit,
+    text: @Composable (item: T) -> Unit,
 ) {
     var showPopup by remember { mutableStateOf(false) }
     if (showPopup) {
@@ -88,7 +79,7 @@ fun <T> JetscheduleSettingMenu(
                 onItemClick.invoke(it)
                 showPopup = false
             },
-            itemText = itemText,
+            itemText = text,
             title = title,
             selectedItem = selectedItem,
             dismissCallback = { showPopup = false }
@@ -107,7 +98,7 @@ fun <T> JetscheduleSettingMenu(
             verticalAlignment = Alignment.CenterVertically) {
             JetscheduleSettingText(modifier = modifier,
                 title = title,
-                hint = { itemText.invoke(selectedItem) })
+                hint = { text.invoke(selectedItem) })
         }
     }
 }

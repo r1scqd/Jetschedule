@@ -27,7 +27,12 @@
     <string name="settings_screen_appearance">Внешний вид</string>
     <string name="settings_screen_rename_subject">Переименование предметов</string>
     <string name="settings_screen_behavior">Поведение</string>
+    <string name="settings_screen_manual" >Руководство</string>
     <string name="settings_screen_about">О приложении</string>
+    <string name="settings_screen_appearance_subtitle">Тема приложение, цветовая схема…</string>
+    <string name="settings_screen_rename_subject_subtitle">Смена отображаемого названия предмета</string>
+    <string name="settings_screen_behavior_subtitle">Начальный экран, автозагрузка…</string>
+    <string name="settings_screen_manual_subtitle" >Руководство по использованию приложения</string>
 
 
     <!-- Manager Screen-->

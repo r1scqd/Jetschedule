@@ -1,25 +1,20 @@
 package ru.rescqd.jetschedule.ui.screen.settings.destinations
 
-import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.KeyboardArrowRight
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.Stable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import ru.rescqd.jetschedule.R
-import ru.rescqd.jetschedule.ui.components.JetscheduleCard
+import ru.rescqd.jetschedule.ui.components.JetscheduleScaffold
 import ru.rescqd.jetschedule.ui.components.JetscheduleTopBar
 import ru.rescqd.jetschedule.ui.screen.settings.destinations.model.DestinationModel
-import ru.rescqd.jetschedule.ui.components.JetscheduleScaffold
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -28,111 +23,96 @@ fun SettingsDestinationScreen(
     navController: NavController,
     onManualScreenOpen: () -> Unit,
 ) {
-    JetscheduleScaffold(modifier = modifier.fillMaxSize(),
-        topBar = {
-            JetscheduleTopBar(
-                modifier = modifier, title = R.string.top_bar_settings
-            )
-        },
-        content = { Body(modifier = modifier, navController = navController, paddingValues = it) },
-        bottomBar = { Bottom(modifier = modifier, onManualScreenOpen = onManualScreenOpen) })
-
-}
-
-@Stable
-@Composable
-private fun Bottom(
-    modifier: Modifier, onManualScreenOpen: () -> Unit
-) {
-    Box(modifier = modifier.padding(horizontal = 10.dp, vertical = 15.dp)) {
-        JetscheduleCard(
-            modifier = modifier.clickable { onManualScreenOpen.invoke() },
-            color = MaterialTheme.colorScheme.background,
-            border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline),
-            shape = MaterialTheme.shapes.medium
+    JetscheduleScaffold(modifier = modifier.fillMaxSize(), topBar = {
+        JetscheduleTopBar(
+            modifier = modifier, title = R.string.top_bar_settings
+        )
+    }) {
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(it)
         ) {
-            Row(
-                modifier = modifier
-                    .fillMaxWidth()
-                    .padding(10.dp),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
-                Text(
-                    text = stringResource(id = R.string.settings_screen_open_manual),
-                    style = MaterialTheme.typography.titleLarge
-                )
-                Icon(
-                    modifier = modifier,
-                    contentDescription = null,
-                    imageVector = Icons.Filled.KeyboardArrowRight,
-                    tint = MaterialTheme.colorScheme.surfaceTint
-                )
-            }
+            Content(modifier = Modifier, navController = navController)
         }
     }
 }
 
-@Stable
 @Composable
-private fun Body(
-    modifier: Modifier, navController: NavController, paddingValues: PaddingValues
-) {
-    LazyColumn(
-        modifier
-            .fillMaxSize()
-            .padding(paddingValues),
-        verticalArrangement = Arrangement.Top,
-        contentPadding = PaddingValues(horizontal = 10.dp)
-    ) {
-        items(DestinationModel.values()) { dest ->
-            DestinationItem(modifier = modifier, navController = navController, dest = dest)
-            Divider(
-                modifier
-                    .fillMaxWidth()
-                    .height(10.dp), color = MaterialTheme.colorScheme.background
-            )
-        }
-    }
-}
-
-@Stable
-@Composable
-private fun DestinationItem(
+private fun Content(
     modifier: Modifier,
     navController: NavController,
-    dest: DestinationModel,
 ) {
-    JetscheduleCard(
-        modifier = modifier.clickable { navController.navigate(dest.route) },
-        color = MaterialTheme.colorScheme.background,
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline),
-        shape = MaterialTheme.shapes.medium
+    Column(modifier.fillMaxSize()) {
+        SettingsItemsContent(navController = navController)
+    }
+}
+
+@Composable
+private fun SettingsItemsContent(
+    navController: NavController,
+) {
+    LazyColumn(
+        modifier = Modifier.fillMaxWidth(),
+        contentPadding = PaddingValues(vertical = 5.dp, horizontal = 10.dp)
+    ) {
+        items(DestinationModel.values()) { destination ->
+            DestItem(
+                navController = navController,
+                destination = destination,
+                modifier = Modifier.padding(vertical = 5.dp)
+            )
+        }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun DestItem(
+    modifier: Modifier = Modifier,
+    navController: NavController,
+    destination: DestinationModel,
+) {
+    ElevatedCard(
+        onClick = { navController.navigate(destination.route) },
+        modifier = modifier.height(72.dp),
+        shape = MaterialTheme.shapes.small,
+        colors = CardDefaults.elevatedCardColors(containerColor = MaterialTheme.colorScheme.surface),
     ) {
         Row(
-            modifier = modifier
-                .fillMaxWidth()
-                .padding(10.dp),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween
+            Modifier
+                .fillMaxSize()
+                .padding(vertical = 10.dp, horizontal = 5.dp)
         ) {
-            dest.icon?.let {
-                Icon(
-                    modifier = modifier,
-                    imageVector = it,
-                    contentDescription = null,
-                    tint = MaterialTheme.colorScheme.surfaceTint
-                )
+            Box(Modifier.weight(1f), contentAlignment = Alignment.Center) {
+                destination.icon?.let {
+                    Icon(
+                        it,
+                        null,
+                        tint = MaterialTheme.colorScheme.primary,
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(10.dp)
+                    )
+                }
             }
-            Text(
-                text = stringResource(id = dest.resId), style = MaterialTheme.typography.titleLarge
-            )
-            Icon(
-                modifier = modifier,
-                contentDescription = null,
-                imageVector = Icons.Filled.KeyboardArrowRight,
-                tint = MaterialTheme.colorScheme.surfaceTint
-            )
+            Column(Modifier.weight(5f)) {
+                Text(
+                    text = stringResource(id = destination.titleId),
+                    style = MaterialTheme.typography.titleLarge,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                )
+                destination.subtitleId?.let {
+                    Text(
+                        text = stringResource(id = it),
+                        style = MaterialTheme.typography.labelLarge,
+                        color = LocalContentColor.current.copy(alpha = 0.8f),
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis,
+                    )
+                }
+            }
         }
     }
 }
