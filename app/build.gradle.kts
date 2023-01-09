@@ -151,6 +151,8 @@ dependencies {
     // calendar
     implementation(libs.github.boguszpawlowski.composecalendar)
     implementation(libs.material.dialog.datepicker)
+    // new calendar
+    implementation(libs.github.kizitonwose.calendar.compose)
 
     // Optional - To enable APIs that query the performance characteristics of GMS devices.
     implementation(libs.androidx.core.perfomance)

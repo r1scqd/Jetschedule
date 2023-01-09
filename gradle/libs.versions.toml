@@ -4,8 +4,8 @@ androidxCore = "1.9.0"
 androidxLifecycle = "2.5.1"
 androidxActivity = "1.6.1"
 androidxComposeUi = "1.3.2"
-androidxComposeCompiler = "1.4.0-alpha02"
-#androidxComposeCompiler = "1.3.2" # stable
+#androidxComposeCompiler = "1.4.0-alpha02"
+androidxComposeCompiler = "1.3.2" # stable
 androidxComposeMaterial3 = "1.0.1"
 androidxHilt = "1.0.0"
 androidxNavigation = "2.5.3"
@@ -16,23 +16,24 @@ androidxTestRunner = "1.5.1"
 coroutines = "1.6.4"
 hilt = "2.44.2"
 junit = "4.13.2"
-#kotlin = "1.7.20" #stable
-kotlin = "1.7.21"
-ksp = "1.7.21-1.0.8"
-#ksp = "1.7.20-1.0.8" #stable
+kotlin = "1.7.20" #stable
+#kotlin = "1.7.21"
+#ksp = "1.7.21-1.0.8"
+ksp = "1.7.20-1.0.8" #stable
 androidxPreferences = "1.0.0"
 #okhttp = "4.10.0" #stable
 okhttp = "5.0.0-alpha.11"
 androidx-work = "1.0.0"
 kotlinSerializationVersion = "1.4.1"
-serializationPlugin = "1.7.21"
-#serializationPlugin = "1.7.20" #stable
+#serializationPlugin = "1.7.21"
+serializationPlugin = "1.7.20" #stable
 materialDialog = "0.9.0"
 iconsExtVersion = "1.4.0-alpha03"
 androidxComposeMaterial = "1.3.1"
 androidxCorePerfomance = "1.0.0-alpha02"
 composecalendarVersion = "1.0.2"
 desugar_jdk_libsVersion = "2.0.0"
+kizitonwoseCalendarVersion = "2.1.1"
 [libraries]
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidxCore" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidxActivity" }
@@ -75,6 +76,7 @@ androidx-core-perfomance = { module = "androidx.core:core-performance", version.
 
 github-boguszpawlowski-composecalendar = { module = "io.github.boguszpawlowski.composecalendar:composecalendar", version.ref = "composecalendarVersion"}
 android-tools-desugar_jdk_libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar_jdk_libsVersion"}
+github-kizitonwose-calendar-compose = {module = "com.kizitonwose.calendar:compose", version.ref = "kizitonwoseCalendarVersion"}
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }

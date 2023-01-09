@@ -35,6 +35,9 @@
 
     <string name="schedule_manager_default_error_message">internal error</string>
     <string name="network_unavailable">network unavailable</string>
+    <string name="schedule_manager_mode_remove">remove</string>
+    <string name="schedule_manager_mode_add">add</string>
+    <string name="schedule_manager_mode_select">select mode</string>
 
     <!-- Add Drawer Screen-->
 
@@ -101,6 +104,7 @@
     <string name="bottom_sheet_audience">audience</string>
     <string name="bottom_sheet_next_days">next days</string>
     <string name="bottom_sheet_prev_days">prev days</string>
+    <string name="bottom_sheet_dates_not_found">dates not found</string>
 
 
     <!-- Appearance Screen -->

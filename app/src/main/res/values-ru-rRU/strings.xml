@@ -34,6 +34,9 @@
 
     <string name="schedule_manager_default_error_message">Внутренняя ошибка</string>
     <string name="network_unavailable">Сеть недоступна</string>
+    <string name="schedule_manager_mode_remove">Удаление</string>
+    <string name="schedule_manager_mode_add">Добавление</string>
+    <string name="schedule_manager_mode_select">Выберите режим</string>
 
     <!-- Add Drawer Screen-->
 
@@ -100,6 +103,7 @@
     <string name="bottom_sheet_audience">Аудитория</string>
     <string name="bottom_sheet_next_days">Следующие дни</string>
     <string name="bottom_sheet_prev_days">Предыдущие дни</string>
+    <string name="bottom_sheet_dates_not_found">Даты не найдены</string>
 
 
     <!-- Appearance Screen -->

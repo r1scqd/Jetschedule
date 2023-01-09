@@ -1,54 +1,53 @@
 package ru.rescqd.jetschedule.ui.screen.schedule.shared.view
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
+import ru.rescqd.jetschedule.R
+import ru.rescqd.jetschedule.ui.components.calendar.clickable
+import ru.rescqd.jetschedule.ui.screen.schedule.shared.toPrettyString
 import java.time.LocalDate
-import java.time.format.TextStyle
-import java.util.*
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BottomSheetDateItem(
     Key: @Composable () -> Unit,
     dates: List<LocalDate>,
     onDateClick: (LocalDate) -> Unit = {},
 ) {
-    Row(modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.Start,
-        verticalAlignment = Alignment.CenterVertically) {
+    Column(
+        modifier = Modifier.fillMaxWidth(),
+        verticalArrangement = Arrangement.Center
+    ) {
         Key()
-        LazyRow(Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 10.dp)) {
-            items(dates) { date ->
-
-                OutlinedCard(
-                    onClick = { onDateClick.invoke(date) },
-                    shape = MaterialTheme.shapes.extraLarge,
-                ) {
-                    Text(
-                        modifier = Modifier.padding(vertical = 2.dp, horizontal = 4.dp),
-                        text = "${
-                            date.month.getDisplayName(
-                                TextStyle.SHORT,
-                                Locale.getDefault()
-                            )
-                        } ${date.dayOfMonth}",
-                    )
+        if (dates.isEmpty())
+            Text(text = stringResource(id = R.string.bottom_sheet_dates_not_found))
+        else
+            LazyRow(
+                Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 10.dp)
+            ) {
+                items(dates) { date ->
+                    Box(
+                        modifier = Modifier
+                            .padding(vertical = 2.dp, horizontal = 3.dp)
+                            .clickable { onDateClick.invoke(date) },
+                        contentAlignment = Alignment.Center,
+                    ) {
+                        Text(
+                            modifier = Modifier.padding(vertical = 2.dp, horizontal = 4.dp),
+                            text = date.toPrettyString,
+                            textDecoration = TextDecoration.Underline
+                        )
+                    }
                 }
             }
-        }
     }
 }
