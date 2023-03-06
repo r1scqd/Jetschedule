@@ -1,6 +1,6 @@
 {
-  "latestVersionName": "Two version name",
+  "latestVersionName": "release_name",
   "latestVersionCode": 2,
   "appUrl": "https://raw.githubusercontent.com/r1scqd/Jetschedule/master/update/app-release.apk",
-  "releaseNotes": "Русский язык"
+  "releaseNotes": "release note"
 }
