@@ -1,6 +1,6 @@
 {
-  "latestVersionName": "0.0.2",
-  "latestVersionCode": 2,
+  "latestVersionName": "0.0.3",
+  "latestVersionCode": 3,
   "appUrl": "https://raw.githubusercontent.com/r1scqd/Jetschedule/master/update/app-release.apk",
-  "releaseNotes": "release note"
+  "releaseNotes": "1) Не повторять в наименование. \\n 2) Расписание недоступно \\n 3) время пар, без праздников \\n 4) Номера этажей"
 }
