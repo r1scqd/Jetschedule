@@ -1,6 +1,6 @@
 {
-  "latestVersionName": "0.0.10",
-  "latestVersionCode": 10,
+  "latestVersionName": "0.0.11",
+  "latestVersionCode": 11,
   "appUrl": "https://raw.githubusercontent.com/r1scqd/Jetschedule/master/update/app-release.apk",
-  "releaseNotes": "null"
+  "releaseNotes": "bug fix"
 }
