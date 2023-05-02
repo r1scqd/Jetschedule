@@ -1,0 +1,7 @@
+{
+  "versionCode": 14,
+  "versionName":"VERSION_NAME",
+  "contentText":"DIALOG_CONTENT_TEXT",
+  "minSupport": 1,
+  "url":"https://raw.githubusercontent.com/r1scqd/Jetschedule/master/update/app-release.apk"
+}
