@@ -1,6 +1,6 @@
 {
-  "latestVersionName": "0.0.13",
-  "latestVersionCode": 13,
+  "latestVersionName": "0.0.16",
+  "latestVersionCode": 16,
   "appUrl": "https://raw.githubusercontent.com/r1scqd/Jetschedule/master/update/app-release.apk",
-  "releaseNotes": "null"
+  "releaseNotes": "Расписание звонков"
 }
